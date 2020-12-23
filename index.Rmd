@@ -1,0 +1,82 @@
+---
+title: "Arbres de régression"
+author: "Bao-Sam Vinh-hung"
+date: "20/07/2020"
+output:
+  bookdown::gitbook: default
+site: bookdown::bookdown_site
+documentclass: book
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- Load all the packages -->
+
+```{r, message=FALSE, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(rpart)
+library(stargazer)
+```
+
+
+# Introduction
+
+Un modèle de fréquence-sévérité classique, comme vu au chapitre 3 par deux types de sinistre.
+
+On peut utiliser les arbes de régression. 
+
+On rappelle le processus schématique de la vie d'un sinistre ci-dessous : 
+
+```{r, echo=FALSE, fig.cap="From Jewell", out.width = '100%'}
+
+knitr::include_graphics("reporting_delay_W.png")
+```
+
+
+
+
+
+## Application aux paiements.
+
+On considère tout d'abord que le processus des paiements est modèle discret où les paiements sont observés annuellement.
+
+Le nombre total de sinistres qui ont eu lieu pour une année de survenance $i$ et qui ont été reporté durant l'année de développement $j$ sont donnés par la sommme $M_{i,j} = \sum_{l=0}^{j} N_{i,l}$.
+
+Les paiements observés sont de la forme :
+
+$X_{i,j|0}^{(v)}, X_{i,j|1}^{(v)}$ 
+
+Ce qui donne au total pour le portefeuille $\sum_{k < i+j} X_{i,j|k}^{(v)}$ et les paiements attendus sont donnés par l'espérance des paiements non encore observés:
+
+$\sum_{k \ge i+j}E(X_{i,j|k}^{(v)})$ 
+
+
+L'espérance est alors donnée par l'optimisation.
+
+
+$p(x) = \sum_{j=1}^{2} \alpha_j p(x|j)$
+
+2
+Pour les sinistres RBNS 
+$ $
+
+
+
+Dans la modélisation sur les 
+
+
+
+$p(x) = \sum_{j=1}^{2} \alpha_j p(x|j)$ 
+
+On peut donc appliquer un algorithme de maximum de vraisemblance sur à la fois le paramètre $\alpha$ et sur les paramètres des distributions conditionnelles
+
+
+$\ell(\theta) = \sum_{i=1}^n \log \left( \sum_{j=1}^2 \alpha_j p(x_i;\mu_j, \sigma_j^2) \right )$
+
+
+```{r}
+
+```

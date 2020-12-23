@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Terminologie | Arbres de régression</title>
+  <meta name="description" content="2 Terminologie | Arbres de régression" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Terminologie | Arbres de régression" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Terminologie | Arbres de régression" />
+  
+  
+  
+
+<meta name="author" content="Bao-Sam Vinh-hung" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="bagging.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#application-aux-paiements."><i class="fa fa-check"></i><b>1.1</b> Application aux paiements.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="terminologie.html"><a href="terminologie.html"><i class="fa fa-check"></i><b>2</b> Terminologie</a><ul>
+<li class="chapter" data-level="2.1" data-path="terminologie.html"><a href="terminologie.html#arbres-de-régression"><i class="fa fa-check"></i><b>2.1</b> Arbres de régression</a></li>
+<li class="chapter" data-level="2.2" data-path="terminologie.html"><a href="terminologie.html#arbres-de-classification"><i class="fa fa-check"></i><b>2.2</b> Arbres de classification</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="terminologie.html"><a href="terminologie.html#visualisation"><i class="fa fa-check"></i><b>2.2.1</b> Visualisation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="terminologie.html"><a href="terminologie.html#elagage-de-larbre"><i class="fa fa-check"></i><b>2.3</b> Elagage de l’arbre</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="terminologie.html"><a href="terminologie.html#exemple"><i class="fa fa-check"></i><b>2.3.1</b> Exemple</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="bagging.html"><a href="bagging.html"><i class="fa fa-check"></i><b>3</b> Bagging</a><ul>
+<li class="chapter" data-level="3.1" data-path="bagging.html"><a href="bagging.html#réduction-du-bais-variance"><i class="fa fa-check"></i><b>3.1</b> Réduction du bais-variance</a></li>
+<li class="chapter" data-level="3.2" data-path="bagging.html"><a href="bagging.html#section"><i class="fa fa-check"></i><b>3.2</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="randomforest.html"><a href="randomforest.html"><i class="fa fa-check"></i><b>4</b> RandomForest</a></li>
+<li class="chapter" data-level="5" data-path="application-à-la-base-de-données.html"><a href="application-à-la-base-de-données.html"><i class="fa fa-check"></i><b>5</b> Application à la base de données</a><ul>
+<li class="chapter" data-level="5.1" data-path="application-à-la-base-de-données.html"><a href="application-à-la-base-de-données.html#test"><i class="fa fa-check"></i><b>5.1</b> Test</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Arbres de régression</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="terminologie" class="section level1">
+<h1><span class="header-section-number">2</span> Terminologie</h1>
+<p>Les arbres de régression permettent de classifier les données en groupes homogènes. Cette classification permet d’associer la valeur la plus vraisemblable à ces groupes. Cette classification se fait via une suite de segmentations binaires.</p>
+<p>Dans la terminologie de la théorie des arbres, un arbre est un ensemble de branches qui se terminent chacune par une feuille.</p>
+<p>Les branches sont obtenues par une segmentation qui est organisée de manière séquentielle. Pour chaque scission d’arbre possible, on obtient une mesure d’erreur globale qui servira d’indicateur à la scission ou pas. La mesure d’erreur globale est la somme des erreurs de chaque feuille - le point terminal de chaque branche de l’arbre-. Le point de départ est le modèle sans séparation.</p>
+<div id="arbres-de-régression" class="section level2">
+<h2><span class="header-section-number">2.1</span> Arbres de régression</h2>
+<p>Pour des prédictions continues, on parlera d’arbres de régression.</p>
+<p>Pour une valeur de prédiction <span class="math inline">\(\hat{y_i}\)</span>, on peut la comparer avec la valeur observée <span class="math inline">\(y_i\)</span>. Lorsqu’on essaye de minimiser via les moindres carrés, l’objectif de minimisation est <span class="math inline">\(\sum_i{(y_i - \hat{y_i})^2}\)</span>.</p>
+<p>L’objectif de l’arbre tend à diminuer cette mesure de l’erreur en séparant les observations en deux régions, via une des caractéristiques de l’ensemble.</p>
+<p>La mesure d’erreur devient alors la somme des erreurs sur chacune des régions <span class="math inline">\(R_{i}\)</span>, la prédiction étant dépendante de la région d’observation:</p>
+<p><span class="math inline">\(\sum_{j=1}^{J}\sum_{i \in R_j}{(y_i - \hat{y_i})^2}\)</span>.</p>
+<p>La valeur frontière qui va déterminer à quel endroit la séparation a lieu est l’endroit qui minimise l’erreur de prédiction.</p>
+</div>
+<div id="arbres-de-classification" class="section level2">
+<h2><span class="header-section-number">2.2</span> Arbres de classification</h2>
+<p>Pour une réponse de type catégorielle, l’arbre est appelée arbre de classification. Les feuilles - les points terminaux de l’arbre- donnent alors la proportion de chacune des différentes modalités de la variable réponse dans celles-ci.</p>
+<p>La proportion <span class="math inline">\(p_{mk}\)</span> de la modalité <span class="math inline">\(k\)</span> dans la feuille est le nombre de <span class="math inline">\(x_{i}\)</span> divisé par la population présente dans la feuille.</p>
+<p>Comment l’arbre grandit? L’arbre développe des branches tant que l’erreur globale est minimisée. Cette erreur globale se mesure avec des mesures d’impurité. L’algorithme de préférence utilisé en <em>R</em> vient du package <code>rpart</code>. Celui-ci utilise deux mesures d’impurité :</p>
+<ul>
+<li>La mesure d’impureté de Gini<br />
+</li>
+<li>L’entropie</li>
+</ul>
+<p>L’indice de Gini est défini par : <span class="math inline">\(\sum_{k = 1}^K \hat{p}_{mk} (1-\hat{p}_{mk})\)</span>.
+Intuitivement cet indice est la probabilité d’assigner la mauvaise classe à une observation tirée au hasard en utilisant les proportions présentes dans la feuille. Dans un exemple à deux classes, <span class="math inline">\(X\)</span> et <span class="math inline">\(Y\)</span> avec de sproportions <span class="math inline">\(p_X\)</span> et <span class="math inline">\(p_Y\)</span> de 0.9 et 0.1 respectivement, les probabilités d’assignement dont donnés par le tableau suivant, qui représente les probabilités conditionnelles d’assignement étant donné leur vraie valeur.</p>
+<p><a id=tab:2.1></a></p>
+<p>Table 2.1. <strong>An Example of Including Tables using Latex in an <code>R markdown</code> Document</strong></p>
+<p><span class="math display">\[
+\begin{matrix}
+    \begin{array}{c|c\c} \hline
+    \text{} &amp; \text{X} &amp; \text{Y} \\\hline
+    \textbf{X} &amp; 0.81 &amp; 0.09 \\\hline
+    \textbf{Y} &amp; 0.09 &amp; 0.01 \\\hline
+    \end{array}
+\end{matrix}
+\]</span></p>
+<p>Cet indice aura tendance à créer</p>
+<p>L’entropie est définie par <span class="math inline">\(-\sum_{k=1}^K \hat{p}_{mk}\log{p_{mk}}\)</span>. Tout comme l’indice de Gini c’est une mesure de l’impurité au sein d’une feuille. Pour des faibles valeurs de <span class="math inline">\(p_{mk}\)</span> l’entropie va baisser.</p>
+<p>Ces deux mesures sont toutes les deux convexes, et prennent leur maximum lorsque qu’il n’y a pas de différence entre les proportions des deux populations : les groupes les plus hétérogènes seront pénalisés et vont pousser l’arbre à scinder le groupe en deux groupes plus homogènes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">ggplot</span>() <span class="op">+</span><span class="st">   </span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x)  <span class="dv">2</span> <span class="op">*</span><span class="st"> </span>x <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span><span class="op">-</span>x), <span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;Gini&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="st">  </span><span class="kw">stat_function</span>(<span class="dt">fun =</span> <span class="cf">function</span>(x)  (<span class="op">-</span><span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(x) <span class="op">-</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="st">                  </span>(<span class="dv">1</span><span class="op">-</span>x) <span class="op">*</span><span class="st"> </span><span class="kw">log</span>(<span class="dv">1</span><span class="op">-</span>x)) <span class="op">/</span><span class="st"> </span><span class="op">-</span><span class="kw">log</span>(<span class="fl">0.5</span>) <span class="op">*</span><span class="st"> </span><span class="fl">0.5</span>,</a>
+<a class="sourceLine" id="cb1-5" title="5">                <span class="dt">n =</span> <span class="dv">1000</span>, </a>
+<a class="sourceLine" id="cb1-6" title="6">                <span class="kw">aes</span>(<span class="dt">color =</span> <span class="st">&quot;Entropie, à l&#39;échelle&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="st">  </span><span class="kw">theme_classic</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">panel.border =</span> <span class="kw">element_rect</span>(<span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-9" title="9"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">scale_color_manual</span>(<span class="st">&quot;Mesure&quot;</span>, <span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>)) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;p&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb1-11" title="11"><span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Mesures de classification, fonction convexe de l&#39;impurité&quot;</span>)</a></code></pre></div>
+<pre><code>## Warning: Removed 2 row(s) containing missing values (geom_path).</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<!-- 2 sided-plots  -->
+<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-2-2.png" width="50%" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-3-2.png" width="50%" /></p>
+<p>Cet indice va mesurer quelle est l’erreur de prédiction moyenne.</p>
+<p>Pour déterminer comment le split est obtenu, la minimisation / maximisation de l’indice de Gini est observée.</p>
+<p>Pour un split via une variable continue, le split entre <span class="math inline">\(K_split\)</span> est fait en calculant l’indice de Gini défini par
+<span class="math display">\[X\]</span> à chaque point possible.</p>
+<p>Si on utilsie la proportion de la classe <span class="math inline">\(p_{mk}\)</span> la plus élevée pour la prédiction, l’erreur attendue est <span class="math inline">\(1 - max(p_{mk})\)</span></p>
+<p>En parcourant toutes les combinaisons possibles</p>
+<!-- Parler de l'indice de Gini / entropie -->
+<div id="visualisation" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Visualisation</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">source</span>(<span class="st">&quot;1. Scripts/ch1_rmd2.R&quot;</span>)</a></code></pre></div>
+<p><img src="_main_files/figure-html/exemple_Gini-1.png" width="672" /></p>
+</div>
+</div>
+<div id="elagage-de-larbre" class="section level2">
+<h2><span class="header-section-number">2.3</span> Elagage de l’arbre</h2>
+<p>Une fois que la base est couverte, il reste à analyser ce qui limite la taille de l’arbre. En effet, à chaque scission l’erreur globale sur la base d’entraînement diminue, si aucune contrainte n’est appliquée, l’arbre va grandir jusqu’à couvrir parfaitement toutes les observations. Cette sur-paramétrisation est à éviter, car on verra qu’elle n’améliore pas le pouvoir de prédiction de l’arbre.</p>
+<div id="exemple" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Exemple</h3>
+<p>Dans l’exemple de <code>kyphosis</code>, il est possible de séparer l’espace de <span class="math inline">\(Y\)</span> pour couvrir toutes les zones possibles de réponse, jusqu’à obtenir des feuilles qui contiennent la même modalité pour la variable de réponse. Les différentes mesures d’impurité (Gini ou entropie) sont alors minimales.</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="50%" /><img src="_main_files/figure-html/unnamed-chunk-4-2.png" width="50%" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bagging.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

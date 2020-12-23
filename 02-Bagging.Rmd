@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "Bao-Sam Vinh-hung"
+date: "19/12/2020"
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Bagging
+
+Nous avons vu que le boostrap est une méthodologie qui permet de ré-echantilloonner des résidus pour avoir plusieurs modèles avec des bases de données différentes. Le boostrap avait ét éfait en ré-echantillonnant les résidus et non pas les données intrinsèques. Néanmoins dans le cadre d'un modèle linéaire cela revient au même. 
+
+Dans le cadre des arbres de classification on va ré-echantilloner la base de donnée d'entrainement plusieurs fois pour obtenir des estimations d'arbres différentes à chaque ré-echantillonnage. 
+
+Le but étant de faire apparaître un certain nombre d'arbres assez grands, qui ont chacun individuellement un biais faible mais une grande variance pour obtenir une prédiction moyenne. 
+
+
+
+## Réduction du biais-variance
+
+Nous avons vu que l'arbre pouvait avoir un biais extrêmement faible. Mais sa vari
+
+
+## Algorithme
+
+Le bagging va 
+
+
+

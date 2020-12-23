@@ -1,0 +1,15 @@
+---
+title: "RandomForest"
+author: "Bao-Sam Vinh-hung"
+date: "19/12/2020"
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# RandomForest
+
+Les forêts aléatoires - * Random Forest  *
+

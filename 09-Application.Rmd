@@ -1,0 +1,33 @@
+---
+title: "Application à la base de données"
+author: "Bao-Sam Vinh-hung"
+date: "20/07/2020"
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Application à la base de données
+
+
+L'exercice sur la base de données consiste à prédire sinistre par sinistre, si celui-ci est encore ouvert à la période suivante et si un paiement a eu lieu. 
+
+On classifie les développements potentiels en 4 cas distincts et on associe à une variable $YZ$ ces éventualités. $YZ$ a 4 valeurs possibles selon la formule suivante: $YZ = 1 * Y + 2*Z$. On définit $Y$ et $Z$ comme 2 variables indicatrices qui indiquent résepectivement la fermeture ou pas du sinistre et $Z$ celle qui indique si un paiement a eu lieu. 
+Dans ce cadre on a 4 résultats possibles à chaque développement:
+
+1. $YZ = 0$; fermeture sans paiement 
+2. $YZ = 1$; pas de fermeture avec paiement
+3. $YZ = 2$; pas de fermeture sans paiement
+4. $YZ = 3$; pas de fermeture avec paiement
+
+
+## Test
+
+```{r}
+kableExtra::kable(head(kyphosis))
+```
+
+

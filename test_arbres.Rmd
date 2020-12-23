@@ -46,8 +46,23 @@ On considère tout d'abord que le processus des paiements est modèle discret o�
 
 Le nombre total de sinistres qui ont eu lieu pour une année de survenance $i$ et qui ont été reporté durant l'année de développement $j$ sont donnés par la sommme $M_{i,j} = \sum_{l=0}^{j} N_{i,l}$.
 
+Les paiements observés sont de la forme :
+
+$X_{i,j|0}^{(v)}, X_{i,j|1}^{(v)} $ 
+
+Ce qui donne au total pour le portefeuille $\sum_{k < i+j} X_{i,j|k}^{(v)}$ et les paiements attendus sont donnés par l'espérance des paiements non encore observés:
+
+$\sum_{k \ge i+j}E(X_{i,j|k}^{(v)})$ 
+
+
+L'espérance est alors donnée par l'optimisation.
+
 
 $p(x) = \sum_{j=1}^{2} \alpha_j p(x|j)$
+
+
+Pour les sinistres RBNS 
+$ $
 
 
 
